@@ -1,0 +1,107 @@
+<html lang="en">
+    <!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Tutorial</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 id="myH1">Dados</h1>
+    
+    <label>Load JSON</label><input type="file" id="loadfile">
+   
+    <button id="download" popovertarget="downloadPopover">Descargar</button>
+    <div id="downloadPopover" popover>
+        <input id="fileName" type="text" value="filename.json">
+        <button id="downloadConfirm">Confirmar Descarga</button>
+    </div>
+    <br>
+    <button id="newTurn">NUEVO TURNO</button>
+    <br>
+    <table id="unitList" border="1px">
+        <tr>
+            <th>Atacante</th>
+            <th>Ataque</th>
+            <th>Defensa</th>
+            <th>Defensor</th>
+            <th>Vidas</th>
+            <th>Postura</th>
+            <th>Estado</th>
+            <th>Especial</th>
+            <th>Notas</th>
+            <th>Borrar</th>
+        </tr>
+    </table>    
+    <table>
+        <tr>
+            <th>Buffs:</th>
+            <th>
+                <label for="coverD" title="defensa extra">Cubierto</label>
+                <input type="checkbox" id="coverD" name="cover">
+            </th>
+            <th>
+                <label for="accurateA" title="mas chance de acertar el ataque">Arma Precisa</label>
+                <input type="checkbox" id="accurateA" name="accurate">
+            </th>
+            <th>
+                <label for="heavyA" title="reduce defensa del defensor">Arma Pesada</label>
+                <input type="checkbox" id="heavyA" name="heavy">
+            </th>
+        </tr>
+        <tr>
+            <th>Debuffs:</th>
+            <th>
+                <label for="inaccurateA" title="menos chances de acertar">Impreciso</label>
+                <input type="checkbox" id="inaccurateA" name="inaccurate">
+            </th>
+            <th>
+                <label for="tiredA" title="menos ataques">Cansado</label>
+                <input type="checkbox" id="tiredA" name="tired">
+            </th>
+            <th>
+                <label for="hardA" title="reduce daño de ataques">Duro</label>
+                <input type="checkbox" id="hardA" name="hard">
+            </th>
+        </tr>
+    </table>
+    <label>#Ataques</label>
+    <input type="number" id="dice" class="inputNarrow" value=1 min="1">
+    <button class="botones" id="resolveButton">RESOLVE</button>
+    <label class="result" id="result">-</label>
+    <br>
+    <button id="throwDie" onclick="document.getElementById('dadoResult').innerHTML = Math.ceil(Math.random()*6)">Un Dado</button>
+    <label class="result" id="dadoResult">-</label>
+    <br>
+    <h4>Agregar Unidad</h4>
+    <table id="tabla" border="1px">
+        <tr>
+            <th>Nombre</th>
+            <th>Armas</th>
+            <th>Defensa</th>
+            <th>Vidas</th>
+            <th>Especiales</th>
+            <th>Notas</th>
+            <th>Guardar</th>
+        </tr>
+        <tr>
+            <th><input type="text" id="in_name_new"></th>
+            <th id="in_weapons"><button id="in_attackNewRow">Nueva Arma</button><br></th>
+            <th><input type="number" id="in_defense_new"></th>
+            <th><input type="number" id="in_lives_new"></th>
+            <th id="in_specials"><button id="in_special_new">Nuevo Especial</button></th>
+            <th><input type="text" id="in_notes_new"></th>
+            <th><button id="save_new">💾</button></th>
+        </tr>
+    </table>
+
+    <div id="confirmDelete" popover>
+        <button id="delete">Confirmar borrar?</button>
+    </div>
+
+    <script src="filltable.js"></script>
+    <script src="saveunitnew.js"></script>
+    <script src="saveunit.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>

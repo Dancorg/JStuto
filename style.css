@@ -1,0 +1,70 @@
+#myH1{
+    font-family: monospace;
+}
+
+.botones{
+    border: 0;
+    padding: 5px;
+    margin: 0px;
+    background-color: lightgray;
+    font-family: monospace;
+    font-style: bold;
+}
+
+.inputNarrow,th input:not(.notas, #in_name_new){
+    max-width: 50px;
+}
+
+th{
+    position:relative;
+    font-family: monospace;
+}
+
+.weaponLabels{
+    font-size: 10px;
+}
+
+#confirmDelete{
+    position: absolute;
+}
+
+#downloadPopover{
+    position: absolute;
+}
+
+th:has(input[type="radio"]),#in_weapons {
+    text-align: left;
+}
+
+th:has(input[type="checkbox"]):not(#in_weapons){
+    text-align: right;
+}
+
+.result{
+    background-color: lightgray;
+    padding: 2px;
+    transition: background-color 0.5s;
+}
+.resultActive{
+    padding: 2px;
+    background-color: violet;  
+}
+
+.canActivate{
+    background-color: rgb(207, 255, 207);
+    transition: background-color 0.5s;
+}
+
+.activated{
+    background-color: rgb(226, 177, 172);
+    transition: background-color 0.5s;
+}
+
+.buttonHidden{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
