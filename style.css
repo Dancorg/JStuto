@@ -1,3 +1,8 @@
+body{
+    background-color: rgb(65, 65, 65);
+    color: whitesmoke;
+}
+
 #myH1{
     font-family: monospace;
 }
@@ -44,6 +49,7 @@ th:has(input[type="checkbox"]):not(#in_weapons){
     background-color: lightgray;
     padding: 2px;
     transition: background-color 0.5s;
+    color: rgb(65,65,65);
 }
 .resultActive{
     padding: 2px;
@@ -53,6 +59,7 @@ th:has(input[type="checkbox"]):not(#in_weapons){
 .canActivate{
     background-color: rgb(207, 255, 207);
     transition: background-color 0.5s;
+    color: rgb(65, 65, 65);
 }
 
 .activated{
@@ -67,4 +74,8 @@ th:has(input[type="checkbox"]):not(#in_weapons){
     height: 100%;
     opacity: 0;
     cursor: pointer;
+}
+
+.weaponLabel{
+    color: rgb(65,65,65);
 }

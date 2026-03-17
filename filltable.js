@@ -169,6 +169,7 @@ class Unit{
             newProfileInput.setAttribute("name", "attacker");
             newProfileInput.addEventListener("click", () => {document.getElementById("dice").value = profile.attacks});
             let newProfileLabel = document.createElement("label");
+            newProfileLabel.setAttribute("class", "weaponLabel");
             newProfileLabel.setAttribute("for", id);
             newProfileLabel.appendChild(document.createTextNode(profile.name));
             newProfileName.appendChild(newProfileInput);
@@ -176,21 +177,25 @@ class Unit{
             
             let newProfileIsMelee = document.createElement("input");
             newProfileIsMelee.setAttribute("type", "checkbox");
+            newProfileIsMelee.setAttribute("class", "weaponLabel");
             newProfileIsMelee.checked = profile.ismelee;
             newProfileIsMelee.disabled = true;
 
             let newProfileHit = document.createElement("th");
-            newProfileHit.setAttribute("id", id + "Hit")
+            newProfileHit.setAttribute("id", id + "Hit");
+            newProfileHit.setAttribute("class", "weaponLabel");
             newProfileHit.appendChild(document.createTextNode(profile.hit));
-
             let newProfileAttacks = document.createElement("th");
             newProfileAttacks.setAttribute("id", id + "Attacks");
+            newProfileAttacks.setAttribute("class", "weaponLabel");
             newProfileAttacks.appendChild(document.createTextNode(profile.attacks));
             let newProfileDamage = document.createElement("th");
             newProfileDamage.setAttribute("id", id + "Damage");
+            newProfileDamage.setAttribute("class", "weaponLabel");
             newProfileDamage.appendChild(document.createTextNode(profile.damage));
             let newProfileAP = document.createElement("th");
             newProfileAP.setAttribute("id", id + "AP");
+            newProfileAP.setAttribute("class", "weaponLabel");
             newProfileAP.appendChild(document.createTextNode(profile.ap));
 
             newProfileRow.appendChild(newProfileName);
